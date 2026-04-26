@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Tools | Maureen Alfonso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid"></div>
+
+    <header class="hero reveal">
+      <nav class="top-nav">
+        <div class="brand">Maureen Alfonso</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="approach.html">Approach</a>
+          <a href="techniques.html">Techniques</a>
+          <a href="difficult-clients.html">Difficult Clients</a>
+          <a href="scenarios.html">Scenarios</a>
+          <a href="tracker.html">Tracker</a>
+          <button id="focusModeBtn" class="ghost-btn" type="button">Focus Mode</button>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <p class="eyebrow">PRACTICE TOOLS</p>
+        <h1>Interactive Coaching Tools.</h1>
+        <p class="hero-sub">
+          Get instant feedback on objections, assess deal health, and master opening statements for different buyer personas.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel reveal">
+        <div class="panel-title-wrap">
+          <h2>Quick Practice Tools</h2>
+          <p>Interactive coaching and real-time guidance to sharpen your sales skills.</p>
+        </div>
+        <div class="practice-tools">
+          <div class="tool-item">
+            <h3>Objection Handler</h3>
+            <p>Type a client objection and get 3 tactical response options instantly.</p>
+            <input id="objectionInput" type="text" placeholder="e.g., Your price is too high." />
+            <button id="objectionBtn" class="primary-btn" type="button">Get Response Options</button>
+            <div id="objectionOutput" class="result-box"></div>
+          </div>
+          <div class="tool-item">
+            <h3>Deal Temperature Check</h3>
+            <p>Evaluate deal health with a quick 5-question assessment.</p>
+            <button id="dealCheckBtn" class="primary-btn" type="button">Start Assessment</button>
+            <div id="dealCheckOutput" class="result-box"></div>
+          </div>
+          <div class="tool-item">
+            <h3>Opening Line Generator</h3>
+            <p>Get context-aware opening lines for different buyer personas.</p>
+            <select id="buyerType">
+              <option value="cfo">CFO (Finance-focused)</option>
+              <option value="coo">COO (Operations-focused)</option>
+              <option value="cto">CTO (Tech-focused)</option>
+              <option value="executive">Executive (Business-focused)</option>
+            </select>
+            <button id="openingBtn" class="primary-btn" type="button">Generate Opening</button>
+            <div id="openingOutput" class="result-box"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <p>Built with precision. Delivered with integrity.</p>
+      <p style="font-size: 0.85rem; margin-top: 0.5rem;">© 2026 Maureen Alfonso. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
