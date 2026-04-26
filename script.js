@@ -80,9 +80,39 @@ function wirePageTransitions() {
   });
 }
 
+function getPageNameFromPath(pathname) {
+  const pageName = pathname.split("/").pop();
+  return pageName ? pageName.toLowerCase() : "index.html";
+}
+
+function wireActiveNavigation() {
+  const currentPage = getPageNameFromPath(window.location.pathname);
+  const navSets = [
+    { selector: ".home-main-nav a[href$='.html']", activeClass: "is-current" },
+    { selector: ".sub-nav a[href$='.html']", activeClass: "current" },
+  ];
+
+  navSets.forEach(({ selector, activeClass }) => {
+    const links = document.querySelectorAll(selector);
+    if (!links.length) {
+      return;
+    }
+
+    links.forEach((link) => {
+      link.classList.remove(activeClass);
+
+      const linkPage = getPageNameFromPath(new URL(link.getAttribute("href"), window.location.href).pathname);
+      if (linkPage === currentPage) {
+        link.classList.add(activeClass);
+      }
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme(getPreferredTheme());
   wireThemeToggle();
+  wireActiveNavigation();
   wireImageFallback();
   wirePageTransitions();
 
