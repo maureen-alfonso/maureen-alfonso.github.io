@@ -10,12 +10,11 @@ function getPreferredTheme() {
 }
 
 function updateToggleLabel(theme) {
-  const themeToggle = document.getElementById("themeToggle");
-  if (!themeToggle) {
-    return;
-  }
-
-  themeToggle.textContent = theme === "dark" ? "Light Mode" : "Dark Mode";
+  const label = theme === "dark" ? "Light Mode" : "Dark Mode";
+  const headerToggle = document.getElementById("themeToggle");
+  if (headerToggle) headerToggle.textContent = label;
+  const sideToggle = document.getElementById("sideMenuThemeToggle");
+  if (sideToggle) sideToggle.textContent = label;
 }
 
 function applyTheme(theme) {
@@ -25,15 +24,16 @@ function applyTheme(theme) {
 }
 
 function wireThemeToggle() {
-  const themeToggle = document.getElementById("themeToggle");
-  if (!themeToggle) {
-    return;
-  }
-
-  themeToggle.addEventListener("click", () => {
+  function toggleTheme() {
     const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
     applyTheme(currentTheme === "dark" ? "light" : "dark");
-  });
+  }
+
+  const headerToggle = document.getElementById("themeToggle");
+  if (headerToggle) headerToggle.addEventListener("click", toggleTheme);
+
+  const sideToggle = document.getElementById("sideMenuThemeToggle");
+  if (sideToggle) sideToggle.addEventListener("click", toggleTheme);
 }
 
 function wireImageFallback() {
@@ -89,6 +89,7 @@ function wireActiveNavigation() {
   const currentPage = getPageNameFromPath(window.location.pathname);
   const navSets = [
     { selector: ".home-main-nav a[href$='.html']", activeClass: "is-current" },
+    { selector: ".side-menu-links a[href$='.html']", activeClass: "is-current" },
     { selector: ".sub-nav a[href$='.html']", activeClass: "current" },
   ];
 
@@ -109,10 +110,55 @@ function wireActiveNavigation() {
   });
 }
 
+function wireMobileSideMenu() {
+  const menuToggle = document.getElementById("mobileMenuToggle");
+  const menuClose = document.getElementById("mobileMenuClose");
+  const sideMenu = document.getElementById("mobileSideMenu");
+  const backdrop = document.getElementById("mobileSideMenuBackdrop");
+
+  if (!menuToggle || !sideMenu || !backdrop) {
+    return;
+  }
+
+  function openMenu() {
+    document.body.classList.add("menu-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    sideMenu.setAttribute("aria-hidden", "false");
+    backdrop.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMenu() {
+    document.body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    sideMenu.setAttribute("aria-hidden", "true");
+    backdrop.setAttribute("aria-hidden", "true");
+  }
+
+  menuToggle.addEventListener("click", () => {
+    document.body.classList.contains("menu-open") ? closeMenu() : openMenu();
+  });
+
+  if (menuClose) menuClose.addEventListener("click", closeMenu);
+  backdrop.addEventListener("click", closeMenu);
+
+  sideMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme(getPreferredTheme());
   wireThemeToggle();
   wireActiveNavigation();
+  wireMobileSideMenu();
   wireImageFallback();
   wirePageTransitions();
 

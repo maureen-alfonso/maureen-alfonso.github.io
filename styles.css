@@ -51,6 +51,8 @@ body {
     radial-gradient(circle at 78% 18%, rgba(var(--brand-rgb), 0.16), transparent 33%),
     linear-gradient(160deg, var(--bg), var(--bg-2));
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow-x: hidden;
   transition: background 0.35s ease, color 0.35s ease;
@@ -143,6 +145,7 @@ body {
 .page {
   padding-top: clamp(0.7rem, 1.4vw, 1rem);
   padding-bottom: 2.5rem;
+  flex: 1 0 auto;
 }
 
 .panel {
@@ -162,11 +165,10 @@ body {
 }
 
 .page-home {
-  padding-top: clamp(0.9rem, 2vw, 1.35rem);
+  padding-top: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 .page-home .profile-hero {
-  grid-template-columns: minmax(260px, 360px) 1fr;
   gap: clamp(1.5rem, 4vw, 3.2rem);
   padding: clamp(1.5rem, 4vw, 3rem);
 }
@@ -191,7 +193,7 @@ body {
 }
 
 .home-header {
-  width: min(1500px, 96vw);
+  width: min(1100px, 92vw);
   padding: 0.9rem 0 0.35rem;
 }
 
@@ -268,6 +270,7 @@ body {
   box-shadow: none;
   backdrop-filter: none;
   background: transparent;
+  align-items: center;
 }
 
 .home-hero-split .profile-copy {
@@ -288,6 +291,165 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
+}
+
+/* ── Hamburger toggle ─────────────────────────────────── */
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hamburger-icon {
+  display: grid;
+  gap: 5px;
+  pointer-events: none;
+}
+
+.hamburger-icon span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+/* ── Side menu ────────────────────────────────────────── */
+.side-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 10, 16, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 60;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(85vw, 340px);
+  height: 100vh;
+  height: 100dvh;
+  background: #151b24;
+  padding: 1.1rem 1.4rem 1.4rem;
+  transform: translateX(110%);
+  transition: transform 0.3s cubic-bezier(0.32, 0, 0.15, 1);
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.side-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.8rem;
+  flex-shrink: 0;
+}
+
+.side-menu-brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: rgba(243, 247, 251, 0.7);
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.side-menu-close {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(243, 247, 251, 0.8);
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.side-menu-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.side-menu-links {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.side-menu-links a {
+  text-decoration: none;
+  color: rgba(243, 247, 251, 0.7);
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: "Fraunces", Georgia, serif;
+  line-height: 1.1;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.side-menu-links a.is-current {
+  color: #30c94d;
+}
+
+.side-menu-links a:hover {
+  color: #f3f7fb;
+}
+
+.side-menu-footer {
+  padding-top: 1.2rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.side-menu-theme-toggle {
+  width: 100%;
+  border: 1px solid rgba(243, 247, 251, 0.18);
+  background: rgba(243, 247, 251, 0.06);
+  color: rgba(243, 247, 251, 0.75);
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.24s ease, border-color 0.24s ease, color 0.24s ease;
+}
+
+.side-menu-theme-toggle:hover {
+  background: rgba(243, 247, 251, 0.12);
+  border-color: #30c94d;
+  color: #f3f7fb;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open .side-menu-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.menu-open .side-menu {
+  transform: translateX(0);
 }
 
 @media (max-width: 1080px) {
@@ -587,7 +749,9 @@ h1 {
 
 .footer {
   text-align: center;
-  padding: 0.5rem 0 2rem;
+  padding: 1.6rem 0 2.4rem;
+  flex-shrink: 0;
+  font-size: 0.8rem;
 }
 
 .footer p {
@@ -596,7 +760,7 @@ h1 {
 
 .copyright {
   margin-top: 0.4rem;
-  font-size: 0.84rem;
+  font-size: 0.72rem;
   color: var(--muted);
 }
 
@@ -640,12 +804,15 @@ body.page-out .footer {
 }
 
 @media (max-width: 900px) {
+  /* non-home hero */
   .profile-hero {
     grid-template-columns: 1fr;
   }
 
   .profile-frame {
     max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-stats {
@@ -661,55 +828,117 @@ body.page-out .footer {
     margin-right: auto;
   }
 
+  /* ── Content pages: center all text ── */
+  .page-shell .profile-copy {
+    text-align: center;
+  }
+
+  .page-shell .profile-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-shell .profile-hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .content-panel {
+    text-align: center;
+  }
+
+  .content-panel .card,
+  .content-panel .number-list li {
+    text-align: left;
+  }
+
+  /* ── Header: single row, brand left + hamburger right ── */
   .top-nav-home {
     padding: 0;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
   }
 
   .home-brand {
-    width: 100%;
-    text-align: center;
+    width: auto;
+    text-align: left;
     padding-left: 0;
+    flex-shrink: 0;
   }
 
   .home-main-nav {
-    width: 100%;
-    justify-content: center;
-    gap: 0.35rem;
+    display: none;
+  }
+
+  #themeToggle {
+    display: none;
   }
 
   .home-actions {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    flex-shrink: 0;
   }
 
-  .home-nav-link {
-    font-size: 0.8rem;
-    min-height: 36px;
-    padding: 0.32rem 0.5rem;
+  .menu-toggle {
+    display: inline-flex;
   }
 
+  /* ── Hero: photo centered on top, text centered below ── */
   .home-hero-split {
+    grid-template-columns: 1fr !important;
     min-height: auto;
-    gap: 1rem;
-    padding-top: 0.5rem;
-    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding: 0.5rem 0 1.5rem;
+    justify-items: center;
+    align-items: start;
   }
 
   .home-hero-split .profile-frame {
     order: 1;
-    margin-top: 0.2rem;
-    width: min(100%, 420px);
+    width: min(72vw, 320px);
     height: auto;
+    margin: 0 auto;
+    align-self: auto;
   }
 
   .home-hero-split .profile-copy {
     order: 2;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .home-hero-split .profile-sub {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 36ch;
   }
 
   .hero-actions {
     justify-content: center;
+  }
+
+  .page-home {
+    padding-top: 0.4rem;
+  }
+
+  .page-home .profile-hero {
+    padding: 0;
+  }
+
+  .page-home h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .page-home .profile-title {
+    font-size: 1.05rem;
+  }
+
+  .page-home .profile-sub {
+    font-size: 0.97rem;
   }
 }
 
@@ -730,22 +959,6 @@ body.page-out .footer {
   .number-list li {
     grid-template-columns: 34px 1fr;
   }
-
-  .page-home {
-    padding-top: 0.7rem;
-  }
-
-  .page-home .profile-hero {
-    padding: 1.1rem;
-  }
-
-  .page-home h1 {
-    font-size: clamp(2.2rem, 10vw, 3rem);
-  }
-
-  .page-home .profile-title {
-    font-size: 1.04rem;
-  }
 }
 
 @media (max-width: 520px) {
@@ -761,15 +974,24 @@ body.page-out .footer {
     padding: 0;
   }
 
-  .home-nav-link {
-    width: 100%;
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
   }
 
-  .home-actions {
-    width: 100%;
+  .home-hero-split .profile-frame {
+    width: min(78vw, 280px);
   }
 
-  .home-actions .ghost-btn {
-    width: 100%;
+  .home-hero-split .profile-sub {
+    max-width: 30ch;
+  }
+
+  .side-menu {
+    width: min(88vw, 300px);
+  }
+
+  .side-menu-links a {
+    font-size: 1rem;
   }
 }
