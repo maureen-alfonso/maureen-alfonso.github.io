@@ -408,9 +408,21 @@
       font-size: 0.88rem;
     }
 
+    .price-table th.right {
+      text-align: right;
+      white-space: nowrap;
+      width: 1%;
+    }
+
     .price-table td.right {
       text-align: right;
       white-space: nowrap;
+      width: 1%;
+    }
+
+    .price-table th:last-child,
+    .price-table td:last-child {
+      padding-left: 2.5rem;
     }
 
     /* ── Payment tab switcher ──────────────────────────── */
@@ -943,22 +955,22 @@
             <h3 style="font-size:1rem; margin:0 0 0.7rem; color:var(--brand);">3-7-90 Payment Schedule</h3>
             <table class="price-table">
               <thead>
-                <tr><th>Particulars</th><th></th><th class="right">Amount (PHP)</th><th class="right">Due Date</th></tr>
+                <tr><th>Particulars</th><th class="right">Amount (PHP)</th><th class="right">Due Date</th></tr>
               </thead>
               <tbody>
-                <tr><td>Reservation Fee<sup>&#8224;</sup></td><td></td><td class="right">50,000.00</td><td class="right muted">May 02, 2026 &mdash; holds unit 30 days</td></tr>
-                <tr><td>3% Outright Downpayment</td><td></td><td class="right">127,187.50</td><td class="right muted">June 02, 2026</td></tr>
-                <tr><td colspan="4" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">7% AMORTIZED &mdash; 6 MONTHS &nbsp;(PHP 413,437.50 total)</td></tr>
-                <tr><td class="muted">1st Downpayment</td><td></td><td class="right">68,906.25</td><td class="right muted">July 02, 2026</td></tr>
-                <tr><td class="muted">2nd Downpayment</td><td></td><td class="right">68,906.25</td><td class="right muted">August 02, 2026</td></tr>
-                <tr><td class="muted">3rd Downpayment</td><td></td><td class="right">68,906.25</td><td class="right muted">September 02, 2026</td></tr>
-                <tr><td class="muted">4th Downpayment</td><td></td><td class="right">68,906.25</td><td class="right muted">October 02, 2026</td></tr>
-                <tr><td class="muted">5th Downpayment</td><td></td><td class="right">68,906.25</td><td class="right muted">November 02, 2026</td></tr>
-                <tr><td class="muted">6th Downpayment</td><td></td><td class="right">68,906.25</td><td class="right muted">December 02, 2026</td></tr>
-                <tr><td colspan="4" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">BALANCE</td></tr>
-                <tr><td>90% Balance</td><td></td><td class="right">5,315,625.00</td><td class="right muted">Bank Financing</td></tr>
-                <tr class="price-highlight"><td><strong>Total Purchase Price</strong></td><td></td><td class="right"><strong>5,906,250.00</strong></td><td></td></tr>
-                <tr><td>Miscellaneous Fees<sup>**</sup></td><td></td><td class="right">150,000.00</td><td></td></tr>
+                <tr><td>Reservation Fee<sup>&#8224;</sup></td><td class="right">50,000.00</td><td class="right muted">May 02, 2026 <span style="display:block; font-size:0.78em; opacity:0.75;">holds unit 30 days</span></td></tr>
+                <tr><td>3% Outright Downpayment</td><td class="right">127,187.50</td><td class="right muted">June 02, 2026</td></tr>
+                <tr><td colspan="3" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">7% AMORTIZED &mdash; 6 MONTHS &nbsp;(PHP 413,437.50 total)</td></tr>
+                <tr><td class="muted">1st Downpayment</td><td class="right">68,906.25</td><td class="right muted">July 02, 2026</td></tr>
+                <tr><td class="muted">2nd Downpayment</td><td class="right">68,906.25</td><td class="right muted">August 02, 2026</td></tr>
+                <tr><td class="muted">3rd Downpayment</td><td class="right">68,906.25</td><td class="right muted">September 02, 2026</td></tr>
+                <tr><td class="muted">4th Downpayment</td><td class="right">68,906.25</td><td class="right muted">October 02, 2026</td></tr>
+                <tr><td class="muted">5th Downpayment</td><td class="right">68,906.25</td><td class="right muted">November 02, 2026</td></tr>
+                <tr><td class="muted">6th Downpayment</td><td class="right">68,906.25</td><td class="right muted">December 02, 2026</td></tr>
+                <tr><td colspan="3" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">BALANCE</td></tr>
+                <tr><td>90% Balance</td><td class="right">5,315,625.00</td><td class="right muted">Bank Financing</td></tr>
+                <tr class="price-highlight"><td><strong>Total Purchase Price</strong></td><td class="right"><strong>5,906,250.00</strong></td><td></td></tr>
+                <tr><td>Miscellaneous Fees<sup>**</sup></td><td class="right">150,000.00</td><td></td></tr>
               </tbody>
             </table>
             <h3 style="font-size:1rem; margin:1.4rem 0 0.7rem; color:var(--brand);">Bank Financing &mdash; Sample Monthly Amortization at 7% <span style="font-weight:400; color:var(--muted); font-size:0.85em;">(Subject to change, depends on bank's prevailing rate)</span></h3>
@@ -1002,22 +1014,22 @@
             <h3 style="font-size:1rem; margin:0 0 0.7rem; color:var(--brand);">3-2-95 Option &mdash; Payment Schedule</h3>
             <table class="price-table">
               <thead>
-                <tr><th>Particulars</th><th></th><th class="right">Amount (PHP)</th><th class="right">Due Date</th></tr>
+                <tr><th>Particulars</th><th class="right">Amount (PHP)</th><th class="right">Due Date</th></tr>
               </thead>
               <tbody>
-                <tr><td>Reservation Fee<sup>&#8224;</sup></td><td></td><td class="right">50,000.00</td><td class="right muted">May 02, 2026 &mdash; holds unit 30 days</td></tr>
-                <tr><td>3% Outright Downpayment</td><td></td><td class="right">127,187.50</td><td class="right muted">June 02, 2026</td></tr>
-                <tr><td colspan="4" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">2% AMORTIZED &mdash; 6 MONTHS &nbsp;(PHP 118,125.00 total)</td></tr>
-                <tr><td class="muted">1st Downpayment</td><td></td><td class="right">19,687.50</td><td class="right muted">July 02, 2026</td></tr>
-                <tr><td class="muted">2nd Downpayment</td><td></td><td class="right">19,687.50</td><td class="right muted">August 02, 2026</td></tr>
-                <tr><td class="muted">3rd Downpayment</td><td></td><td class="right">19,687.50</td><td class="right muted">September 02, 2026</td></tr>
-                <tr><td class="muted">4th Downpayment</td><td></td><td class="right">19,687.50</td><td class="right muted">October 02, 2026</td></tr>
-                <tr><td class="muted">5th Downpayment</td><td></td><td class="right">19,687.50</td><td class="right muted">November 02, 2026</td></tr>
-                <tr><td class="muted">6th Downpayment</td><td></td><td class="right">19,687.50</td><td class="right muted">December 02, 2026</td></tr>
-                <tr><td colspan="4" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">BALANCE</td></tr>
-                <tr><td>95% Balance</td><td></td><td class="right">5,610,937.50</td><td class="right muted">Bank Financing</td></tr>
-                <tr class="price-highlight"><td><strong>Total Purchase Price</strong></td><td></td><td class="right"><strong>5,906,250.00</strong></td><td></td></tr>
-                <tr><td>Miscellaneous Fees<sup>**</sup></td><td></td><td class="right">150,000.00</td><td></td></tr>
+                <tr><td>Reservation Fee<sup>&#8224;</sup></td><td class="right">50,000.00</td><td class="right muted">May 02, 2026 <span style="display:block; font-size:0.78em; opacity:0.75;">holds unit 30 days</span></td></tr>
+                <tr><td>3% Outright Downpayment</td><td class="right">127,187.50</td><td class="right muted">June 02, 2026</td></tr>
+                <tr><td colspan="3" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">2% AMORTIZED &mdash; 6 MONTHS &nbsp;(PHP 118,125.00 total)</td></tr>
+                <tr><td class="muted">1st Downpayment</td><td class="right">19,687.50</td><td class="right muted">July 02, 2026</td></tr>
+                <tr><td class="muted">2nd Downpayment</td><td class="right">19,687.50</td><td class="right muted">August 02, 2026</td></tr>
+                <tr><td class="muted">3rd Downpayment</td><td class="right">19,687.50</td><td class="right muted">September 02, 2026</td></tr>
+                <tr><td class="muted">4th Downpayment</td><td class="right">19,687.50</td><td class="right muted">October 02, 2026</td></tr>
+                <tr><td class="muted">5th Downpayment</td><td class="right">19,687.50</td><td class="right muted">November 02, 2026</td></tr>
+                <tr><td class="muted">6th Downpayment</td><td class="right">19,687.50</td><td class="right muted">December 02, 2026</td></tr>
+                <tr><td colspan="3" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">BALANCE</td></tr>
+                <tr><td>95% Balance</td><td class="right">5,610,937.50</td><td class="right muted">Bank Financing</td></tr>
+                <tr class="price-highlight"><td><strong>Total Purchase Price</strong></td><td class="right"><strong>5,906,250.00</strong></td><td></td></tr>
+                <tr><td>Miscellaneous Fees<sup>**</sup></td><td class="right">150,000.00</td><td></td></tr>
               </tbody>
             </table>
             <h3 style="font-size:1rem; margin:1.4rem 0 0.7rem; color:var(--brand);">Bank Financing &mdash; Sample Monthly Amortization at 8% <span style="font-weight:400; color:var(--muted); font-size:0.85em;">(Subject to change, depends on bank's prevailing rate)</span></h3>

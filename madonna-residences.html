@@ -302,9 +302,21 @@
       font-size: 0.88rem;
     }
 
+    .price-table th.right {
+      text-align: right;
+      white-space: nowrap;
+      width: 1%;
+    }
+
     .price-table td.right {
       text-align: right;
       white-space: nowrap;
+      width: 1%;
+    }
+
+    .price-table th:last-child,
+    .price-table td:last-child {
+      padding-left: 2.5rem;
     }
 
     /* ── Inventory table ───────────────────────────────── */
@@ -953,35 +965,35 @@
           <table class="price-table">
             <thead>
               <tr>
-                <th>Particulars</th><th></th>
+                <th>Particulars</th>
                 <th class="right">Amount (PHP)</th>
                 <th class="right">Due Date</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Package Contract</td><td></td><td class="right">11,244,200.00</td><td></td></tr>
+              <tr><td>Package Contract</td><td class="right">11,244,200.00</td><td></td></tr>
               <tr class="price-highlight">
-                <td><strong>Total Contract Price</strong></td><td></td>
+                <td><strong>Total Contract Price</strong></td>
                 <td class="right"><strong>11,244,200.00</strong></td><td></td>
               </tr>
-              <tr><td colspan="4" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">DOWN PAYMENT SCHEDULE</td></tr>
-              <tr><td>Reservation Fee<sup>*</sup></td><td></td><td class="right">50,000.00</td><td class="right muted">April 21, 2026</td></tr>
-              <tr><td>Outright Downpayment</td><td></td><td class="right">287,326.00</td><td class="right muted">May 21, 2026</td></tr>
+              <tr><td colspan="3" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">DOWN PAYMENT SCHEDULE</td></tr>
+              <tr><td>Reservation Fee<sup>*</sup></td><td class="right">50,000.00</td><td class="right muted">April 21, 2026</td></tr>
+              <tr><td>Outright Downpayment</td><td class="right">287,326.00</td><td class="right muted">May 21, 2026</td></tr>
               <tr>
                 <td>Remaining Balance of DP <span style="color:var(--muted); font-size:0.85em;">(amortized over 6 months)</span></td>
-                <td></td><td class="right">787,094.00</td><td class="right muted">Split to 6 months</td>
+                <td class="right">787,094.00</td><td class="right muted">Split to 6 months</td>
               </tr>
-              <tr><td class="muted" style="padding-left:1.8rem;">1st Downpayment</td><td></td><td class="right muted">196,773.50</td><td class="right muted">June 21, 2026</td></tr>
-              <tr><td class="muted" style="padding-left:1.8rem;">2nd Downpayment</td><td></td><td class="right muted">196,773.50</td><td class="right muted">July 21, 2026</td></tr>
-              <tr><td class="muted" style="padding-left:1.8rem;">3rd Downpayment</td><td></td><td class="right muted">196,773.50</td><td class="right muted">August 21, 2026</td></tr>
-              <tr><td class="muted" style="padding-left:1.8rem;">4th Downpayment</td><td></td><td class="right muted">196,773.50</td><td class="right muted">September 21, 2026</td></tr>
-              <tr><td colspan="4" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">BALANCE</td></tr>
-              <tr><td>90% Balance</td><td></td><td class="right">10,119,780.00</td><td class="right muted">Bank Financing</td></tr>
+              <tr><td class="muted" style="padding-left:1.8rem;">1st Downpayment</td><td class="right muted">196,773.50</td><td class="right muted">June 21, 2026</td></tr>
+              <tr><td class="muted" style="padding-left:1.8rem;">2nd Downpayment</td><td class="right muted">196,773.50</td><td class="right muted">July 21, 2026</td></tr>
+              <tr><td class="muted" style="padding-left:1.8rem;">3rd Downpayment</td><td class="right muted">196,773.50</td><td class="right muted">August 21, 2026</td></tr>
+              <tr><td class="muted" style="padding-left:1.8rem;">4th Downpayment</td><td class="right muted">196,773.50</td><td class="right muted">September 21, 2026</td></tr>
+              <tr><td colspan="3" style="padding:0.3rem 0.9rem; background:rgba(var(--glass-rgb),0.04); color:var(--muted); font-size:0.8rem; letter-spacing:0.06em; font-weight:700;">BALANCE</td></tr>
+              <tr><td>90% Balance</td><td class="right">10,119,780.00</td><td class="right muted">Bank Financing</td></tr>
               <tr class="price-highlight">
-                <td><strong>Total Purchase Price</strong></td><td></td>
+                <td><strong>Total Purchase Price</strong></td>
                 <td class="right"><strong>11,244,200.00</strong></td><td></td>
               </tr>
-              <tr><td>Miscellaneous Fees<sup>**</sup></td><td></td><td class="right">250,000.00</td><td class="right muted">June 21, 2026</td></tr>
+              <tr><td>Miscellaneous Fees<sup>**</sup></td><td class="right">250,000.00</td><td class="right muted">June 21, 2026</td></tr>
             </tbody>
           </table>
 
