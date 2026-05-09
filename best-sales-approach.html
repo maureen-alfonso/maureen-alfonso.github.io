@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Approach to Helping You Find the Right Property | Maureen Alfonso</title>
+    <link rel="icon" type="image/png" href="assets/house.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="preload">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid"></div>
+
+    <header class="site-header reveal home-header">
+      <nav class="top-nav top-nav-home">
+        <a class="brand home-brand" href="index.html">Maureen Alfonso</a>
+
+        <div class="home-main-nav" aria-label="Portfolio sections">
+          <a class="home-nav-link is-current" href="best-sales-approach.html">Best Sales Approach</a>
+          <a class="home-nav-link" href="closing-techniques.html">Closing Techniques</a>
+          <a class="home-nav-link" href="handling-difficult-clients.html">Difficult Clients</a>
+          <a class="home-nav-link" href="personal-branding-strategy.html">Branding Strategy</a>
+          <a class="home-nav-link" href="landing.html">For Buyers</a>
+        </div>
+
+        <div class="top-actions home-actions">
+          <button id="themeToggle" class="ghost-btn" type="button" aria-label="Toggle dark mode">
+            Dark Mode
+          </button>
+          <button
+            id="mobileMenuToggle"
+            class="ghost-btn menu-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileSideMenu"
+          >
+            <span class="hamburger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+<div id="mobileSideMenuBackdrop" class="side-menu-backdrop" aria-hidden="true"></div>
+    <aside id="mobileSideMenu" class="side-menu" aria-hidden="true">
+      <div class="side-menu-header">
+        <span class="side-menu-brand">Menu</span>
+        <button id="mobileMenuClose" type="button" class="side-menu-close" aria-label="Close menu">&#10005;</button>
+      </div>
+      <nav class="side-menu-links" aria-label="Mobile navigation">
+        <a href="best-sales-approach.html">Best Sales Approach</a>
+        <a href="closing-techniques.html">Closing Techniques</a>
+        <a href="handling-difficult-clients.html">Difficult Clients</a>
+        <a href="personal-branding-strategy.html">Branding Strategy</a>
+        <a href="landing.html">For Buyers</a>
+      </nav>
+      <div class="side-menu-footer">
+        <button id="sideMenuThemeToggle" class="side-menu-theme-toggle" type="button" aria-label="Toggle dark mode">Dark Mode</button>
+      </div>
+    </aside>
+
+    <main class="page page-shell reveal">
+      <section class="panel profile-hero">
+        <div class="profile-frame">
+          <img class="profile-image" src="./assets/maureen-profile.jpg" alt="Portrait of Maureen Alfonso" />
+          <div class="profile-fallback">MA</div>
+        </div>
+        <div class="profile-copy">
+          <p class="eyebrow">SECTION 01</p>
+          <h1>My Approach to Helping You Find the Right Property</h1>
+          <p class="profile-title">Real Estate Sales Executive</p>
+          <p class="profile-sub">
+            I don't approach this as selling. I see it as guiding you toward a home that aligns with your plans,
+            your pace, and <em>what truly matters to you.</em>
+          </p>
+        </div>
+      </section>
+
+      <section class="panel content-panel">
+        <h2>I Start by Understanding You, Not Your Budget</h2>
+        <p>Before anything else, I want to know — tap each card to find out.</p>
+
+        <div class="flip-grid">
+
+          <div class="flip-card" role="button" aria-label="Who — flip for details" tabindex="0">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <p class="flip-keyword">WHO?</p>
+                <p class="flip-label">Understand the Person</p>
+                <p class="flip-hint">tap to reveal</p>
+              </div>
+              <div class="flip-back">
+                <p class="flip-back-title">WHO</p>
+                <p>I learn your lifestyle, values, and long-term goals before anything else.</p>
+                <p class="flip-quote">"What kind of life are you trying to build?"</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" role="button" aria-label="What — flip for details" tabindex="0">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <p class="flip-keyword">WHAT?</p>
+                <p class="flip-label">Identify the Real Need</p>
+                <p class="flip-hint">tap to reveal</p>
+              </div>
+              <div class="flip-back">
+                <p class="flip-back-title">WHAT</p>
+                <p>I find the gap between your current situation and your desired future — not just a house, but a solution.</p>
+                <p style="margin-top:0.4rem; font-size:0.8rem; color:var(--brand); font-weight:600;">Space &middot; Security &middot; Investment &middot; Freedom &middot; Comfort</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" role="button" aria-label="When — flip for details" tabindex="0">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <p class="flip-keyword">WHEN?</p>
+                <p class="flip-label">Create the Vision</p>
+                <p class="flip-hint">tap to reveal</p>
+              </div>
+              <div class="flip-back">
+                <p class="flip-back-title">WHEN</p>
+                <p>I help you see how the property supports your future timeline.</p>
+                <p class="flip-quote">"How do you see yourself living 3–5 years from now?"</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" role="button" aria-label="Where — flip for details" tabindex="0">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <p class="flip-keyword">WHERE?</p>
+                <p class="flip-label">Match the Right Property</p>
+                <p class="flip-hint">tap to reveal</p>
+              </div>
+              <div class="flip-back">
+                <p class="flip-back-title">WHERE</p>
+                <p>I present properties that align emotionally, financially, and practically — positioning each home as part of your ideal life story.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="margin-top:1.2rem;">Because the truth is, a property is never just about square meters or price.</p>
+        <p><em>It's about where you'll grow, rest, and build your future.</em></p>
+      </section>
+
+      <section class="panel content-panel">
+        <h2>I Don't Offer Options, I Offer Solutions</h2>
+        <p>Once I understand your needs, I don't overwhelm you with listings that don't match <em>what you're looking for.</em> Instead, I carefully select properties that:</p>
+        <div class="split">
+          <div class="card">
+            <h4>Match Your Lifestyle</h4>
+            <p>Every recommendation is chosen with your day-to-day life in mind, not just what's available.</p>
+          </div>
+          <div class="card">
+            <h4>Solve Your Current Challenges</h4>
+            <p>Whether it's space, location, budget, or timing — I address what's holding you back.</p>
+          </div>
+          <div class="card">
+            <h4>Support Your Long-Term Goals</h4>
+            <p>A secure family space, a smart investment, or a home that reflects your personal lifestyle — I position each option based on how it <em>actually helps you.</em></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel content-panel">
+        <h2>I Adjust to You, Not the Other Way Around</h2>
+        <p>Every client is different.</p>
+        <p>Some prefer detailed explanations.<br>Some want straight-to-the-point decisions.<br>Others need time and clarity before committing.</p>
+        <p>I naturally adapt to your communication style so you feel:</p>
+        <ol class="number-list">
+          <li>
+            <span class="num">01</span>
+            <div>
+              <h4>Comfortable</h4>
+              <p>No jargon, no pressure — just honest conversations at your pace.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div>
+              <h4>Understood</h4>
+              <p>Your goals and concerns are heard and reflected in every option I present.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div>
+              <h4>Never Pressured</h4>
+            </div>
+          </li>
+        </ol>
+        <p><em>Because this process should feel right, not rushed.</em></p>
+      </section>
+
+      <section class="panel content-panel final-step-panel">
+        <p class="eyebrow">FINAL STEP</p>
+        <h2>From everything you shared, this feels like the best option for you.</h2>
+        <p><em>Are you ready to secure it today?</em></p>
+        <p><a class="quick-link" href="closing-techniques.html">Next: Closing Techniques</a></p>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <p>Built with precision. Delivered with integrity.</p>
+      <p class="copyright">© 2026 Maureen Alfonso. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
