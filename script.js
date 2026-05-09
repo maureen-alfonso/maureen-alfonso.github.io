@@ -234,6 +234,44 @@ function wireFlipCards() {
   });
 }
 
+function wireScenarioSwitcher() {
+  const tabs = document.querySelectorAll(".scenario-tab");
+  const panels = document.querySelectorAll(".chat-scenario");
+  const prevBtn = document.getElementById("scenarioPrev");
+  const nextBtn = document.getElementById("scenarioNext");
+  const counter = document.getElementById("scenarioCounter");
+
+  if (!tabs.length || !panels.length) return;
+
+  const total = panels.length;
+  let current = 0;
+
+  function goTo(index) {
+    panels[current].classList.remove("active");
+    tabs[current].classList.remove("active");
+    tabs[current].setAttribute("aria-selected", "false");
+
+    current = index;
+
+    panels[current].classList.add("active");
+    tabs[current].classList.add("active");
+    tabs[current].setAttribute("aria-selected", "true");
+
+    if (counter) counter.textContent = `${current + 1} / ${total}`;
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current === total - 1;
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => goTo(Number(tab.dataset.scenario)));
+  });
+
+  if (prevBtn) prevBtn.addEventListener("click", () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener("click", () => goTo(current + 1));
+
+  goTo(0);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme(getPreferredTheme());
   wireThemeToggle();
@@ -244,6 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
   wireTypingAnimation();
   wireDropdowns();
   wireFlipCards();
+  wireScenarioSwitcher();
 
   window.requestAnimationFrame(() => {
     document.body.classList.remove("preload");
